@@ -24,5 +24,5 @@ class LoginForm(FlaskForm):
  
     
     def validate_username(self,data_field):
-        if User.query.filter_by(username= data_field.data).first():
+        if User.query.filter_by(name= data_field.data).first():
             raise ValidationError("Username already exists")

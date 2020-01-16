@@ -51,7 +51,7 @@ class Pitch(db.Model):
     time=db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     category=db.Column(db.String(255),nullable=False,index=True)
-    comment=db.relationship('comment',backref='pitch',lazy='dynamic')
+    comment=db.relationship('Comment',backref='pitch',lazy='dynamic')
     upvote = db.relationship('Upvote',backref='pitch',lazy='dynamic')
     downvote = db.relationship('Downvote',backref='pitch',lazy='dynamic')
 
